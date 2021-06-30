@@ -9,7 +9,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MrgsManagementApp">
-        <activity android:name=".ForgotPassword"></activity>
+        <activity android:name=".PlannerActivity"></activity>
+        <activity android:name=".ToDoListActivity" />
+        <activity android:name=".PastPapersActivity" />
+        <activity android:name=".ForgotPassword" />
         <activity android:name=".LogoutActivity" />
         <activity android:name=".MainActivity2" />
         <activity android:name=".SetupActivity" />

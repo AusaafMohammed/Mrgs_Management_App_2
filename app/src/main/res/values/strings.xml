@@ -15,11 +15,11 @@
     <string name="remember_me">Remember me</string>
     <string name="logout">Log Out</string>
     <string name="title_activity_forgot">ForgotActivity</string>
-<!--    &lt;!&ndash; Strings used for fragments for navigation &ndash;&gt;-->
-<!--    <string name="first_fragment_label">First Fragment</string>-->
-<!--    <string name="second_fragment_label">Second Fragment</string>-->
-<!--    <string name="next">Next</string>-->
-<!--    <string name="previous">Previous</string>-->
+    <!--    &lt;!&ndash; Strings used for fragments for navigation &ndash;&gt;-->
+    <!--    <string name="first_fragment_label">First Fragment</string>-->
+    <!--    <string name="second_fragment_label">Second Fragment</string>-->
+    <!--    <string name="next">Next</string>-->
+    <!--    <string name="previous">Previous</string>-->
 
     <string name="forgot_password_info">
         Forgot your password? Do not worry! Please enter your email address below!

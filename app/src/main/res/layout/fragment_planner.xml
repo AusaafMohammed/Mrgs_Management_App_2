@@ -1,34 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@drawable/gradient">
 
 
     <TextView
-        android:id="@+id/idPlanner"
+        android:id="@+id/planner"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:text="@string/planner"
         android:textColor="@color/black"
+        android:text="@string/planner"
         android:textSize="30sp"
-        android:layout_below="@+id/calendarView"
-        android:layout_marginTop="20dp">
+        android:layout_centerInParent="true">
 
     </TextView>
 
-    <CalendarView
-        android:id="@+id/calendarView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
-
     <Button
-        android:id="@+id/btnLogout"
+        android:id="@+id/btn_planner"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/idPlanner"
+        android:text="@string/planner"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        android:textAllCaps="true"
         android:layout_centerInParent="true"
-        android:layout_marginTop="25dp"
-        android:text="@string/logout" />
+        android:layout_below="@+id/planner"
+        android:layout_marginTop="36dp"
+        />
 
 </RelativeLayout>

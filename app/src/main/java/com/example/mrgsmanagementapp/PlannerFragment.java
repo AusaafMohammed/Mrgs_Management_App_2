@@ -22,10 +22,10 @@ public class PlannerFragment extends Fragment {
     public View onCreateView(@NonNull @NotNull LayoutInflater inflater, @Nullable @org.jetbrains.annotations.Nullable ViewGroup container, @Nullable @org.jetbrains.annotations.Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_planner,container,false);
 
-        Button btnLogout = view.findViewById(R.id.btnLogout);
+        Button btn_planner = view.findViewById(R.id.btn_planner);
 
-        btnLogout.setOnClickListener(v -> {
-            Intent intent = new Intent(getActivity(),LogoutActivity.class);
+        btn_planner.setOnClickListener(v -> {
+            Intent intent = new Intent(getActivity(),PlannerActivity.class);
             startActivity(intent);
         });
         return view;
