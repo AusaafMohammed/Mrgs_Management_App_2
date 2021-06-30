@@ -9,12 +9,17 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.app.ProgressDialog;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.view.Display;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
+import com.firebase.ui.database.FirebaseRecyclerAdapter;
+import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -24,6 +29,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 import org.jetbrains.annotations.NotNull;
+import org.w3c.dom.Text;
 
 import java.text.DateFormat;
 import java.util.Date;
@@ -123,5 +129,135 @@ public class ToDoListActivity extends AppCompatActivity {
         dialog.show();
     }
 
+    @Override
+    protected void onStart() {
+        super.onStart();
+        FirebaseRecyclerOptions<Model> options = new FirebaseRecyclerOptions.Builder<Model>()
+                .setQuery(reference, Model.class)
+                .build();
 
+        FirebaseRecyclerAdapter<Model, MyViewHolder> adapter = new FirebaseRecyclerAdapter<Model, MyViewHolder>(options) {
+            @Override
+            protected void onBindViewHolder(@NonNull @NotNull ToDoListActivity.MyViewHolder holder, int position, @NonNull @NotNull Model model) {
+                holder.setDate(model.getDate());
+                holder.setTask(model.getTask());
+                holder.setDescription(model.getDescription());
+
+                holder.mView.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        key = getRef(position).getKey();
+                        task = model.getTask();
+                        description = model.getDescription();
+
+                        updateTask();
+                    }
+                });
+
+            }
+
+            @NonNull
+            @NotNull
+            @Override
+            public MyViewHolder onCreateViewHolder(@NonNull @NotNull ViewGroup parent, int viewType) {
+                View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.retrieved_layout, parent, false);
+                return  new MyViewHolder(view);
+            }
+        };
+
+        recyclerView.setAdapter(adapter);
+        adapter.startListening();
+    }
+
+    public static  class MyViewHolder extends RecyclerView.ViewHolder{
+        View mView;
+
+        public MyViewHolder(@NonNull @NotNull View itemView) {
+            super(itemView);
+            mView = itemView;
+        }
+        public void setTask(String task){
+            TextView taskTectView = mView.findViewById(R.id.taskTv);
+            taskTectView.setText(task);
+        }
+
+        public  void setDescription(String desc){
+            TextView descTectView = mView.findViewById(R.id.descriptionTv);
+            descTectView.setText(desc);
+        }
+        public void setDate(String date){
+            TextView dateTextView = mView.findViewById(R.id.dateTv);
+        }
+    }
+
+    private void updateTask() {
+        AlertDialog.Builder myDialog = new AlertDialog.Builder(this);
+        LayoutInflater inflater = LayoutInflater.from(this);
+        View view = inflater.inflate(R.layout.update_data, null);
+        myDialog.setView(view);
+
+        AlertDialog dialog = myDialog.create();
+
+        EditText mTask = view.findViewById(R.id.edit_task);
+        EditText mDescription = view.findViewById(R.id.edit_description);
+
+        mTask.setText(task);
+        mTask.setSelection(task.length());
+
+        mDescription.setText(description);
+        mDescription.setSelection(description.length());
+
+        Button btn_delete = view.findViewById(R.id.btn_delete);
+        Button btn_update = view.findViewById(R.id.btn_update);
+
+        btn_update.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                task = mTask.getText().toString().trim();
+                description = mDescription.getText().toString().trim();
+
+                String date = DateFormat.getDateInstance().format(new Date());
+
+                Model model = new Model(task,description,key,date);
+
+                reference.child(key).setValue(model).addOnCompleteListener(new OnCompleteListener<Void>() {
+                    @Override
+                    public void onComplete(@NonNull @NotNull Task<Void> task) {
+
+                        if (task.isSuccessful()){
+                            Toast.makeText(ToDoListActivity.this, "Data has been updated successfully", Toast.LENGTH_SHORT).show();
+                        }else{
+                            String err = task.getException().toString();
+                            Toast.makeText(ToDoListActivity.this, "Update failed" + err, Toast.LENGTH_SHORT).show();
+                        }
+
+                    }
+                });
+
+                dialog.dismiss();
+
+            }
+        });
+
+        btn_delete.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                reference.child(key).removeValue().addOnCompleteListener(new OnCompleteListener<Void>() {
+                    @Override
+                    public void onComplete(@NonNull @NotNull Task<Void> task) {
+                        if (task.isSuccessful()){
+                            Toast.makeText(ToDoListActivity.this, "Task deleted successfully", Toast.LENGTH_SHORT).show();
+                        }else{
+                            String err =task.getException().toString();
+                            Toast.makeText(ToDoListActivity.this, "Failed to delete task!" + err, Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                });
+
+                dialog.dismiss();
+            }
+        });
+
+        dialog.show();
+    }
 }

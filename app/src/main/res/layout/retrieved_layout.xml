@@ -42,23 +42,24 @@
                 android:id="@+id/taskTv"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="10dp"
                 android:text="Task"
                 android:textSize="15sp"
                 android:textStyle="bold"
-                android:padding="5dp"
+                android:textAlignment="center"
+                android:paddingTop="10dp"
                 android:maxLines="1"
-                android:textColor="@color/white" />
+                android:textColor="@color/black" />
 
             <TextView
                 android:id="@+id/descriptionTv"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
-                android:textColor="@color/white"
+                android:textColor="@color/black"
                 android:text="Description"
                 android:textSize="15sp"
-                android:maxLines="3" />
+                android:maxLines="3"
+                android:textStyle="normal"/>
 
         </LinearLayout>
 
