@@ -1,4 +1,6 @@
 <resources>
+
+<!--Common strings which are used in multiple activities-->
     <string name="app_name">Mrgs Management App</string>
     <string name="email">Email</string>
     <string name="password">Password</string>
@@ -21,14 +23,24 @@
     <!--    <string name="next">Next</string>-->
     <!--    <string name="previous">Previous</string>-->
 
+<!--These strings are used in forgot password activity-->
     <string name="forgot_password_info">
         Forgot your password? Do not worry! Please enter your email address below!
     </string>
-
     <string name="forgot_password_info_2">
         We will send you a reset password link and you could simply click it to change your password!
     </string>
-
     <string name="reset_password">Reset Password</string>
     <string name="go_back">Return back to login page?</string>
+
+<!--These strings are used in update data, retrieved layout and input file-->
+    <string name="update_task">Update your task</string>
+    <string name="task">Task</string>
+    <string name="description">Description</string>
+    <string name="delete">Delete</string>
+    <string name="update">Update</string>
+    <string name="date">June 18, 2020</string>
+    <string name="new_task">Add a new task</string>
+    <string name="cancel">Cancel</string>
+    <string name="save">Save</string>
 </resources>

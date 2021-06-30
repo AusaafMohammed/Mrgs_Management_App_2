@@ -9,7 +9,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.app.ProgressDialog;
 import android.os.Bundle;
 import android.text.TextUtils;
-import android.view.Display;
+//import android.view.Display;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -20,8 +20,8 @@ import android.widget.Toast;
 
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
+//import com.google.android.gms.tasks.OnCompleteListener;
+//import com.google.android.gms.tasks.Task;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -29,20 +29,17 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 import org.jetbrains.annotations.NotNull;
-import org.w3c.dom.Text;
+//import org.w3c.dom.Text;
 
 import java.text.DateFormat;
 import java.util.Date;
+import java.util.Objects;
 
 public class ToDoListActivity extends AppCompatActivity {
 
     private RecyclerView recyclerView;
-    private FloatingActionButton floatingActionButton;
 
     private DatabaseReference reference;
-    private FirebaseAuth mAuth;
-    private FirebaseUser mUser;
-    private String onlineUserID;
 
     private ProgressDialog loader;
 
@@ -64,12 +61,13 @@ public class ToDoListActivity extends AppCompatActivity {
 
         loader = new ProgressDialog(this);
 
-        mAuth = FirebaseAuth.getInstance();
-        mUser = mAuth.getCurrentUser();
-        onlineUserID = mUser.getUid();
+        FirebaseAuth mAuth = FirebaseAuth.getInstance();
+        FirebaseUser mUser = mAuth.getCurrentUser();
+        assert mUser != null;
+        String onlineUserID = mUser.getUid();
         reference = FirebaseDatabase.getInstance().getReference().child("tasks").child(onlineUserID);
 
-        floatingActionButton = findViewById(R.id.fab);
+        FloatingActionButton floatingActionButton = findViewById(R.id.fab);
         floatingActionButton.setOnClickListener(v -> addTask());
 
     }
@@ -110,18 +108,15 @@ public class ToDoListActivity extends AppCompatActivity {
                 loader.show();
 
                 Model model = new Model(mTask,mDescription,id,date);
-                reference.child(id).setValue(model).addOnCompleteListener(new OnCompleteListener<Void>() {
-                    @Override
-                    public void onComplete(@NonNull @NotNull Task<Void> task) {
-                        if (task.isSuccessful()){
-                            Toast.makeText(ToDoListActivity.this, "Task has been inserted successfully", Toast.LENGTH_SHORT).show();
-                            loader.dismiss();
-                        }else {
-                            String error = task.getException().toString();
-                            Toast.makeText(ToDoListActivity.this, "Failed: " + error, Toast.LENGTH_SHORT).show();
-                            loader.dismiss();
-                        }
+                assert id != null;
+                reference.child(id).setValue(model).addOnCompleteListener(task1 -> {
+                    if (task1.isSuccessful()){
+                        Toast.makeText(ToDoListActivity.this, "Task has been inserted successfully", Toast.LENGTH_SHORT).show();
+                    }else {
+                        String error = Objects.requireNonNull(task1.getException()).toString();
+                        Toast.makeText(ToDoListActivity.this, "Failed: " + error, Toast.LENGTH_SHORT).show();
                     }
+                    loader.dismiss();
                 });
             }
             dialog.dismiss();
@@ -143,15 +138,12 @@ public class ToDoListActivity extends AppCompatActivity {
                 holder.setTask(model.getTask());
                 holder.setDescription(model.getDescription());
 
-                holder.mView.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        key = getRef(position).getKey();
-                        task = model.getTask();
-                        description = model.getDescription();
+                holder.mView.setOnClickListener(v -> {
+                    key = getRef(position).getKey();
+                    task = model.getTask();
+                    description = model.getDescription();
 
-                        updateTask();
-                    }
+                    updateTask();
                 });
 
             }
@@ -210,52 +202,40 @@ public class ToDoListActivity extends AppCompatActivity {
         Button btn_delete = view.findViewById(R.id.btn_delete);
         Button btn_update = view.findViewById(R.id.btn_update);
 
-        btn_update.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                task = mTask.getText().toString().trim();
-                description = mDescription.getText().toString().trim();
+        btn_update.setOnClickListener(v -> {
+            task = mTask.getText().toString().trim();
+            description = mDescription.getText().toString().trim();
 
-                String date = DateFormat.getDateInstance().format(new Date());
+            String date = DateFormat.getDateInstance().format(new Date());
 
-                Model model = new Model(task,description,key,date);
+            Model model = new Model(task,description,key,date);
 
-                reference.child(key).setValue(model).addOnCompleteListener(new OnCompleteListener<Void>() {
-                    @Override
-                    public void onComplete(@NonNull @NotNull Task<Void> task) {
+            reference.child(key).setValue(model).addOnCompleteListener(task -> {
 
-                        if (task.isSuccessful()){
-                            Toast.makeText(ToDoListActivity.this, "Data has been updated successfully", Toast.LENGTH_SHORT).show();
-                        }else{
-                            String err = task.getException().toString();
-                            Toast.makeText(ToDoListActivity.this, "Update failed" + err, Toast.LENGTH_SHORT).show();
-                        }
+                if (task.isSuccessful()){
+                    Toast.makeText(ToDoListActivity.this, "Data has been updated successfully", Toast.LENGTH_SHORT).show();
+                }else{
+                    String err = Objects.requireNonNull(task.getException()).toString();
+                    Toast.makeText(ToDoListActivity.this, "Update failed" + err, Toast.LENGTH_SHORT).show();
+                }
 
-                    }
-                });
+            });
 
-                dialog.dismiss();
+            dialog.dismiss();
 
-            }
         });
 
-        btn_delete.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                reference.child(key).removeValue().addOnCompleteListener(new OnCompleteListener<Void>() {
-                    @Override
-                    public void onComplete(@NonNull @NotNull Task<Void> task) {
-                        if (task.isSuccessful()){
-                            Toast.makeText(ToDoListActivity.this, "Task deleted successfully", Toast.LENGTH_SHORT).show();
-                        }else{
-                            String err =task.getException().toString();
-                            Toast.makeText(ToDoListActivity.this, "Failed to delete task!" + err, Toast.LENGTH_SHORT).show();
-                        }
-                    }
-                });
+        btn_delete.setOnClickListener(v -> {
+            reference.child(key).removeValue().addOnCompleteListener(task -> {
+                if (task.isSuccessful()){
+                    Toast.makeText(ToDoListActivity.this, "Task deleted successfully", Toast.LENGTH_SHORT).show();
+                }else{
+                    String err = Objects.requireNonNull(task.getException()).toString();
+                    Toast.makeText(ToDoListActivity.this, "Failed to delete task!" + err, Toast.LENGTH_SHORT).show();
+                }
+            });
 
-                dialog.dismiss();
-            }
+            dialog.dismiss();
         });
 
         dialog.show();

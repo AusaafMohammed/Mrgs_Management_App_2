@@ -9,7 +9,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
-        android:text="Update your task"
+        android:text="@string/update_task"
         android:gravity="center"
         android:background="@color/black"
         android:textColor="@color/white"
@@ -21,7 +21,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:baselineAligned="false">
 
         <RelativeLayout
             android:layout_width="0dp"
@@ -31,7 +32,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Task"
+                android:text="@string/task"
                 android:textStyle="bold"
                 android:textColor="@color/black"
                 android:layout_margin="10dp" />
@@ -47,11 +48,12 @@
                 android:id="@+id/edit_task"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Task"
+                android:hint="@string/task"
                 android:textStyle="normal"
                 android:textColor="@color/black"
                 android:textColorHint="@color/black"
-                android:layout_margin="10dp" />
+                android:layout_margin="10dp"
+                android:autofillHints="" />
 
         </RelativeLayout>
 
@@ -61,7 +63,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:baselineAligned="false">
 
         <RelativeLayout
             android:layout_width="0dp"
@@ -71,7 +74,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Description"
+                android:text="@string/description"
                 android:textStyle="bold"
                 android:textColor="@color/black"
                 android:layout_margin="10dp" />
@@ -87,11 +90,12 @@
                 android:id="@+id/edit_description"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Description"
+                android:hint="@string/description"
                 android:textStyle="normal"
                 android:textColor="@color/black"
                 android:textColorHint="@color/black"
-                android:layout_margin="10dp" />
+                android:layout_margin="10dp"
+                android:autofillHints="" />
 
         </RelativeLayout>
 
@@ -101,7 +105,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:baselineAligned="false">
 
         <RelativeLayout
             android:layout_width="0dp"
@@ -112,7 +117,7 @@
                 android:id="@+id/btn_delete"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Delete"
+                android:text="@string/delete"
                 android:textAllCaps="false"
                 android:background="@color/black"
                 android:textColor="@color/white"
@@ -131,7 +136,7 @@
                 android:id="@+id/btn_update"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Update"
+                android:text="@string/update"
                 android:textAllCaps="false"
                 android:background="@color/black"
                 android:textColor="@color/white"
