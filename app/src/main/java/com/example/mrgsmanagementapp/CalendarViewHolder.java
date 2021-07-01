@@ -10,20 +10,20 @@ import org.jetbrains.annotations.NotNull;
 
 public class CalendarViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener
 {
-    public final TextView dayofMonth;
+    public final TextView dayOfMonth;
     private final CalendarAdapter.OnItemListener onItemListener;
 
     public CalendarViewHolder(@NonNull @NotNull View itemView, CalendarAdapter.OnItemListener onItemListener)
     {
         super(itemView);
-        dayofMonth = itemView.findViewById(R.id.cellDayText);
+        dayOfMonth = itemView.findViewById(R.id.cellDayText);
         this.onItemListener = onItemListener;
         itemView.setOnClickListener(this);
     }
 
     @Override
-    public void onClick(View v)
+    public void onClick(View view)
     {
-        onItemListener.onItemClick(getAdapterPosition(), (String) dayofMonth.getText());
+        onItemListener.onItemClick(getAdapterPosition(), (String) dayOfMonth.getText());
     }
 }

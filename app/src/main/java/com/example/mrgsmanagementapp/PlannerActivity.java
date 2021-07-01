@@ -4,10 +4,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+//import android.content.Intent;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
+//import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -63,8 +64,8 @@ public class PlannerActivity extends AppCompatActivity implements CalendarAdapte
         YearMonth yearMonth = YearMonth.from(date);
 
         int daysInMonth = yearMonth.lengthOfMonth();
-        LocalDate firstofMonth = selectedDate.withDayOfMonth(1);
-        int dayOfWeek = firstofMonth.getDayOfWeek().getValue();
+        LocalDate firstOfMonth = selectedDate.withDayOfMonth(1);
+        int dayOfWeek = firstOfMonth.getDayOfWeek().getValue();
 
         for (int i = 1;i <= 42; i++)
         {
@@ -101,10 +102,15 @@ public class PlannerActivity extends AppCompatActivity implements CalendarAdapte
     @Override
     public void onItemClick(int position, String dayText)
     {
-        if(dayText.equals(""))
+        if(!dayText.equals(""))
         {
             String message = "Selected Date " + dayText + " " + monthYearFromDate(selectedDate);
             Toast.makeText(this, message, Toast.LENGTH_LONG).show();
         }
+    }
+
+    public void weeklyAction(View view)
+    {
+        startActivity(new Intent(this, WeekViewActivity.class));
     }
 }

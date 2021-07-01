@@ -17,16 +17,15 @@ public class PastPapersActivity extends AppCompatActivity {
     ListView lv;
     ArrayList<String> al;
     ArrayAdapter<String> aa;
-    private Button Return2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_past_papers);
 
-        Return2=findViewById(R.id.Return2);
+        Button return2 = findViewById(R.id.Return2);
 
-        Return2.setOnClickListener(v -> {
+        return2.setOnClickListener(v -> {
             Intent intent = new Intent(PastPapersActivity.this,MainActivity2.class);
             startActivity(intent);
         });
