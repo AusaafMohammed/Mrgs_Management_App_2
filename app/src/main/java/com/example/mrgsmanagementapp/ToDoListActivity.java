@@ -3,10 +3,13 @@ package com.example.mrgsmanagementapp;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 //import android.view.Display;
@@ -32,10 +35,23 @@ import org.jetbrains.annotations.NotNull;
 //import org.w3c.dom.Text;
 
 import java.text.DateFormat;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.Objects;
 
+
+//        return_todo.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                FragmentTransaction fragmentTransaction=getSupportFragmentManager().beginTransaction();
+//                fragmentTransaction.replace(R.id.fragment_todolist,new MainActivity2()).commit();
+//            }
+//        });
+
+
 public class ToDoListActivity extends AppCompatActivity {
+
+    private Button Return2;
 
     private RecyclerView recyclerView;
 
@@ -51,6 +67,13 @@ public class ToDoListActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_to_do_list);
+
+        Return2=findViewById(R.id.Return2);
+
+        Return2.setOnClickListener(v -> {
+            Intent intent = new Intent(ToDoListActivity.this,MainActivity2.class);
+            startActivity(intent);
+        });
 
         recyclerView = findViewById(R.id.recycler_view);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
@@ -134,7 +157,7 @@ public class ToDoListActivity extends AppCompatActivity {
         FirebaseRecyclerAdapter<Model, MyViewHolder> adapter = new FirebaseRecyclerAdapter<Model, MyViewHolder>(options) {
             @Override
             protected void onBindViewHolder(@NonNull @NotNull ToDoListActivity.MyViewHolder holder, int position, @NonNull @NotNull Model model) {
-                holder.setDate(model.getDate());
+                holder.setDate();
                 holder.setTask(model.getTask());
                 holder.setDescription(model.getDescription());
 
@@ -177,8 +200,13 @@ public class ToDoListActivity extends AppCompatActivity {
             TextView descTectView = mView.findViewById(R.id.descriptionTv);
             descTectView.setText(desc);
         }
-        public void setDate(String date){
-            TextView dateTextView = mView.findViewById(R.id.dateTv);
+        public void setDate(){
+            TextView textViewDate = mView.findViewById(R.id.dateTv);
+
+            Calendar calendar = Calendar.getInstance();
+            String currentDate = DateFormat.getDateInstance().format(calendar.getTime());
+
+            textViewDate.setText(currentDate);
         }
     }
 
