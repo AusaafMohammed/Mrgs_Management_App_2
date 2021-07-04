@@ -23,12 +23,12 @@ public class PastPapersActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_past_papers);
 
-        Button return2 = findViewById(R.id.Return2);
-
-        return2.setOnClickListener(v -> {
-            Intent intent = new Intent(PastPapersActivity.this,MainActivity2.class);
-            startActivity(intent);
-        });
+//        Button return2 = findViewById(R.id.Return2);
+//
+//        return2.setOnClickListener(v -> {
+//            Intent intent = new Intent(PastPapersActivity.this,MainActivity2.class);
+//            startActivity(intent);
+//        });
 
         lv=findViewById(R.id.listview1);
         al=new ArrayList<String>();

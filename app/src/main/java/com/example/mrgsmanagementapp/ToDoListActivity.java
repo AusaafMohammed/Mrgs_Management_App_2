@@ -68,12 +68,12 @@ public class ToDoListActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_to_do_list);
 
-        Return2=findViewById(R.id.Return2);
-
-        Return2.setOnClickListener(v -> {
-            Intent intent = new Intent(ToDoListActivity.this,MainActivity2.class);
-            startActivity(intent);
-        });
+//        Return2=findViewById(R.id.Return2);
+//
+//        Return2.setOnClickListener(v -> {
+//            Intent intent = new Intent(ToDoListActivity.this,MainActivity2.class);
+//            startActivity(intent);
+//        });
 
         recyclerView = findViewById(R.id.recycler_view);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
