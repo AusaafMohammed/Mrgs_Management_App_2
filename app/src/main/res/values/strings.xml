@@ -49,4 +49,5 @@
     <string name="forward"><![CDATA[->]]></string>
     <string name="weekly">Weekly</string>
     <string name="new_event">New Event</string>
+    <string name="name_of_the_event">Name of the event:</string>
 </resources>
