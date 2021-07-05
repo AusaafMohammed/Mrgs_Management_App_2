@@ -56,11 +56,6 @@ public class WeekViewActivity extends AppCompatActivity implements CalendarAdapt
         setWeekView();
     }
 
-//    public void nextMonthAction(View view)
-//    {
-//
-//    }
-
     public void nextWeekAction(View view)
     {
         CalendarUtils.selectedDate = CalendarUtils.selectedDate.plusWeeks(1);

@@ -24,12 +24,12 @@ public class Event
 
     private String name;
     private LocalDate date;
-    private LocalTime time;
+//    private LocalTime time;
 
-    public Event(String name, LocalDate date, LocalTime time) {
+    public Event(String name, LocalDate date) {
         this.name = name;
         this.date = date;
-        this.time = time;
+//        this.time = time;
     }
 
     public String getName() {
@@ -48,11 +48,11 @@ public class Event
         this.date = date;
     }
 
-    public LocalTime getTime() {
-        return time;
-    }
-
-    public void setTime(LocalTime time) {
-        this.time = time;
-    }
+//    public LocalTime getTime() {
+//        return time;
+//    }
+//
+//    public void setTime(LocalTime time) {
+//        this.time = time;
+//    }
 }

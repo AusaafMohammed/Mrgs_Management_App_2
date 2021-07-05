@@ -154,6 +154,7 @@
         android:textColor="@color/white"
         android:background="@color/black"
         android:textStyle="bold"
+        android:layout_marginTop="20dp"
         android:onClick="newEventAction"
         android:layout_gravity="center"
         android:textSize="20sp" />
