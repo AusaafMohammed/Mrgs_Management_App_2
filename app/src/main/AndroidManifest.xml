@@ -18,9 +18,7 @@
         <activity android:name=".ToDoListActivity" />
         <activity android:name=".PastPapersActivity" />
         <activity android:name=".ForgotPassword" />
-        <activity android:name=".LogoutActivity" />
         <activity android:name=".MainActivity2" />
-        <activity android:name=".SetupActivity" />
         <activity android:name=".RegisterActivity" />
         <activity android:name=".LoginActivity" />
         <activity android:name=".SplashActivity">

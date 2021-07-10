@@ -45,11 +45,11 @@ public class ForgotPassword extends AppCompatActivity {
 
 
         //This part of the code is to return back to login interface
-        TextView Return = findViewById(R.id.Return);
-        Return.setOnClickListener(v -> {
-            Intent intent = new Intent(ForgotPassword.this,LoginActivity.class);
-            startActivity(intent);
-        });
+//        TextView Return = findViewById(R.id.Return);
+//        Return.setOnClickListener(v -> {
+//            Intent intent = new Intent(ForgotPassword.this,LoginActivity.class);
+//            startActivity(intent);
+//        });
 
 //      For Forgot Password Button
         btnResetPassword.setOnClickListener(v -> resetPassword());

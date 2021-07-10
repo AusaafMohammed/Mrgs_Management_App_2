@@ -23,7 +23,6 @@ public class RegisterActivity extends AppCompatActivity {
 
     private TextInputLayout inputEmail,inputPassword,inputConfirmPassword;
     Button btnRegister;
-    TextView AlreadyHaveAccount;
     FirebaseAuth mAuth;
     ProgressDialog mLoadingBar;
 
@@ -36,15 +35,10 @@ public class RegisterActivity extends AppCompatActivity {
         inputPassword=findViewById(R.id.inputPassword);
         inputConfirmPassword=findViewById(R.id.inputConfirmPassword);
         btnRegister=findViewById(R.id.btnRegister);
-        AlreadyHaveAccount=findViewById(R.id.AlreadyHaveAccount);
         mAuth=FirebaseAuth.getInstance();
         mLoadingBar=new ProgressDialog(this);
 
         btnRegister.setOnClickListener(v -> AtemptRegistration());
-        AlreadyHaveAccount.setOnClickListener(v -> {
-            Intent intent=new Intent(RegisterActivity.this, LoginActivity.class);
-            startActivity(intent);
-        });
     }
 
     private void AtemptRegistration() {
@@ -74,7 +68,7 @@ public class RegisterActivity extends AppCompatActivity {
                 {
                     mLoadingBar.dismiss();
                     Toast.makeText(RegisterActivity.this, "Registration is Successful", Toast.LENGTH_SHORT).show();
-                    Intent intent=new Intent(RegisterActivity.this, LogoutActivity.class);
+                    Intent intent=new Intent(RegisterActivity.this, MainActivity2.class);
                     //Change mainactivity to setupactivity later
                     intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK| Intent.FLAG_ACTIVITY_NEW_TASK);
                     startActivity(intent);
