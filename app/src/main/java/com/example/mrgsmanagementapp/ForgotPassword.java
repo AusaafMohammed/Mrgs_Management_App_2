@@ -1,6 +1,6 @@
 package com.example.mrgsmanagementapp;
 
-//import androidx.annotation.NonNull;
+//These are the imports for ForgotPassword.java
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -22,62 +22,55 @@ import com.google.firebase.auth.FirebaseAuth;
 
 import java.util.Objects;
 
-//import java.util.regex.PatternSyntaxException;
-
 public class ForgotPassword extends AppCompatActivity {
 
-//    private TextInputLayout inputEmail;
+//  These are for creating variables for Authentication and EditText
     FirebaseAuth mAuth;
     private EditText edittextEmail;
-
-    public ForgotPassword() {
-    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_forgot_password);
 
-//        inputEmail=findViewById(R.id.inputEmail);
+//      Assigning Variables with id's defined in activity_forgot.xml
         edittextEmail=findViewById(R.id.edittextEmail);
         Button btnResetPassword = findViewById(R.id.btnResetPassword);
         mAuth=FirebaseAuth.getInstance();
 
-
-        //This part of the code is to return back to login interface
-//        TextView Return = findViewById(R.id.Return);
-//        Return.setOnClickListener(v -> {
-//            Intent intent = new Intent(ForgotPassword.this,LoginActivity.class);
-//            startActivity(intent);
-//        });
-
-//      For Forgot Password Button
+//      This part runs the resetPassword on click of ResetPassword button
         btnResetPassword.setOnClickListener(v -> resetPassword());
     }
 
 //  Method for resetPassword
+//  This part ensures that the user enters an email address and also to ensure that the email address entered is valid or not
     private void resetPassword() {
         String email = Objects.requireNonNull(Objects.requireNonNull(edittextEmail.getText()).toString().trim());
 
         if(email.isEmpty()){
+//          If email is not entered
             edittextEmail.setError("Email is required!");
             edittextEmail.requestFocus();
             return;
         }
         if(!Patterns.EMAIL_ADDRESS.matcher(email).matches()){
-            edittextEmail.setError("Please provide valid email!");
+//          If email entered is incorrect
+            edittextEmail.setError("Please provide valid email! Please provide your account email!");
             edittextEmail.requestFocus();
             return;
         }
 
+//      If email matches, this part lets the user know if the reset link was sent or no
         mAuth.sendPasswordResetEmail(email).addOnCompleteListener(task -> {
 
             if(task.isSuccessful()){
+//              If the reset link was sent
                 Toast.makeText(ForgotPassword.this, "Check your email to reset your password!", Toast.LENGTH_SHORT).show();
             }else{
+//              If the reset link was not sent
                 Toast.makeText(ForgotPassword.this, "Try again! Something wrong happened!", Toast.LENGTH_SHORT).show();
             }
-
         });
     }
+//ForgotPassword Part Ends
 }

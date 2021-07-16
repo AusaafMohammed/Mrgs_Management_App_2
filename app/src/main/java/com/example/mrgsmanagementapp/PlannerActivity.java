@@ -1,5 +1,6 @@
 package com.example.mrgsmanagementapp;
 
+//These are the imports for PlannerActivity.java
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -23,6 +24,7 @@ import static com.example.mrgsmanagementapp.CalendarUtils.monthYearFromDate;
 public class PlannerActivity extends AppCompatActivity implements CalendarAdapter.OnItemListener
 {
 
+//  These are for creating variables
     private TextView monthYearText;
     private RecyclerView calendarRecyclerView;
 
@@ -34,22 +36,18 @@ public class PlannerActivity extends AppCompatActivity implements CalendarAdapte
         CalendarUtils.selectedDate = LocalDate.now();
         setMonthView();
 
-//        Button return2 = findViewById(R.id.Return2);
-//
-//        return2.setOnClickListener(v -> {
-//            Intent intent = new Intent(PlannerActivity.this,MainActivity2.class);
-//            startActivity(intent);
-//        });
-
     }
 
+//  Creating initWidgets method
     private void initWidgets() {
+//      defining the variables
         calendarRecyclerView = findViewById(R.id.calendarRecyclerView);
         monthYearText = findViewById(R.id.monthYearTV);
     }
-
+//  Creating setMonthView method
     private void setMonthView()
     {
+//      This part of the code is for the design of calendar with 7 grids and selected date
         monthYearText.setText(monthYearFromDate(CalendarUtils.selectedDate));
         ArrayList<LocalDate> daysInMonth = daysInMonthArray(CalendarUtils.selectedDate);
 
@@ -57,15 +55,16 @@ public class PlannerActivity extends AppCompatActivity implements CalendarAdapte
         RecyclerView.LayoutManager layoutManager = new GridLayoutManager(getApplicationContext(), 7);
         calendarRecyclerView.setLayoutManager(layoutManager);
         calendarRecyclerView.setAdapter(calendarAdapter);
-
     }
 
+//  This part of the code is for viewing Previous Month from CalendarUtils
     public void previousMonthAction(View view)
     {
         CalendarUtils.selectedDate = CalendarUtils.selectedDate.minusMonths(1);
         setMonthView();
     }
 
+//  This part of the code is for viewing Next Month from CalendarUtils
     public void nextMonthAction(View view)
     {
         CalendarUtils.selectedDate = CalendarUtils.selectedDate.plusMonths(1);
@@ -75,6 +74,7 @@ public class PlannerActivity extends AppCompatActivity implements CalendarAdapte
     @Override
     public void onItemClick(int position, LocalDate date)
     {
+//      If date is selected
         if (date != null)
         {
             CalendarUtils.selectedDate = date;
@@ -82,7 +82,7 @@ public class PlannerActivity extends AppCompatActivity implements CalendarAdapte
         }
     }
 
-
+//  This part of the code is for starting WeekViewActivity
     public void weeklyAction(View view)
     {
         startActivity(new Intent(this, WeekViewActivity.class));

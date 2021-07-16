@@ -1,5 +1,6 @@
 package com.example.mrgsmanagementapp;
 
+//These are the imports for PastPapersActivity.java
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -23,19 +24,12 @@ public class PastPapersActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_past_papers);
 
-//        Button return2 = findViewById(R.id.Return2);
-//
-//        return2.setOnClickListener(v -> {
-//            Intent intent = new Intent(PastPapersActivity.this,MainActivity2.class);
-//            startActivity(intent);
-//        });
-
         lv=findViewById(R.id.listview1);
         al=new ArrayList<String>();
         aa=new ArrayAdapter<String>(this, android.R.layout.simple_list_item_activated_1,al);
         lv.setAdapter(aa);
         al.add("google.com");
-        al.add("facebook.com");
+        al.add("nzqa.govt.nz");
         lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {

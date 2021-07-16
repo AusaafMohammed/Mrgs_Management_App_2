@@ -52,4 +52,5 @@
     <string name="name_of_the_event">Name of the event:</string>
     <string name="event">Event</string>
     <string name="time">Select Time</string>
+    <string name="one">1</string>
 </resources>

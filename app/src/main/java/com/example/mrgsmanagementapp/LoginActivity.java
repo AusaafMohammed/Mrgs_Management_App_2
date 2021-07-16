@@ -1,6 +1,6 @@
 package com.example.mrgsmanagementapp;
 
-//import androidx.annotation.NonNull;
+//These are the imports for LoginActivity.java
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.ProgressDialog;
@@ -27,6 +27,7 @@ import java.util.Objects;
 
 public class LoginActivity extends AppCompatActivity {
 
+//  These are for creating variables
     private TextInputLayout inputEmail,inputPassword;
     Button btnLogin;
     TextView forgotPassword,CreateNewAccount;
@@ -39,103 +40,113 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
+//      Assigning Variables with id's defined in activity_login.xml
         inputEmail=findViewById(R.id.inputEmail);
         inputPassword=findViewById(R.id.inputPassword);
         btnLogin=findViewById(R.id.btnLogin);
         CreateNewAccount=findViewById(R.id.CreateNewAccount);
         remember_me=findViewById(R.id.remember_me);
+
+//      These are for LoadingBar and Authentication
         mLoadingBar=new ProgressDialog(this);
         mAuth=FirebaseAuth.getInstance();
 
+//      This section directs the user to forgot password page where the user can reset their password using their valid email
         forgotPassword=findViewById(R.id.forgotPassword);
         forgotPassword.setOnClickListener(v -> {
             Intent intent = new Intent (LoginActivity.this,ForgotPassword.class);
             startActivity(intent);
         });
 
-//      This part of the code is for checkbox
+//      This part of the code is for checkbox for remember me button
         SharedPreferences preferences = getSharedPreferences("checkbox", MODE_PRIVATE);
         String checkbox = preferences.getString("remember_me","");
         if(checkbox.equals("true")){
             Intent intent = new Intent(LoginActivity.this, MainActivity2.class);
             startActivity(intent);
-//        }else if(checkbox.equals("false")) {
-//            Toast.makeText(this, "Please Sign In!", Toast.LENGTH_SHORT).show();
         }
 
+//      This part of the code is for checking if the remember me button is checked or no
+        remember_me.setOnCheckedChangeListener((compoundButton, isChecked) -> {
+            if(compoundButton.isChecked()) {
+                SharedPreferences.Editor editor = preferences.edit();
+                editor.putString("remember_me","true");
+                editor.apply();
+            }else if (!compoundButton.isChecked()) {
+                SharedPreferences.Editor editor = preferences.edit();
+                editor.putString("remember_me","false");
+                editor.apply();
+            }
+        });
+//      Checkbox Part Ends
+
+//      Login part starts
+
+//      This is for redirecting the user to Main Activity if the user's authentication entered is correct
         btnLogin.setOnClickListener(v -> {
             Intent intent = new Intent(LoginActivity.this, MainActivity2.class);
             startActivity(intent);
         });
 
-        remember_me.setOnCheckedChangeListener((compoundButton, isChecked) -> {
-
-            if(compoundButton.isChecked()) {
-                SharedPreferences.Editor editor = preferences.edit();
-                editor.putString("remember_me","true");
-                editor.apply();
-//                Toast.makeText(LoginActivity.this, "Checked", Toast.LENGTH_SHORT).show();
-            }else if (!compoundButton.isChecked()) {
-                SharedPreferences.Editor editor = preferences.edit();
-                editor.putString("remember_me","false");
-                editor.apply();
-//                Toast.makeText(LoginActivity.this, "Unchecked", Toast.LENGTH_SHORT).show();
-            }
-        });
-
-//      Checkbox Part Ends
-
-//      Login Part starts
+//      This is for redirecting the user to Register Activity if the user doesn't have an account
         CreateNewAccount.setOnClickListener(v -> {
             Intent intent=new Intent(LoginActivity.this,RegisterActivity.class);
             startActivity(intent);
         });
+//      This part runs the AttemptLogin on click of login button
         btnLogin.setOnClickListener(v -> AtemptLogin());
-
     }
 
+//  Method for AttemptLogin
+//  This part ensures that the user enters valid email and valid password
     private void AtemptLogin() {
         String email= Objects.requireNonNull(inputEmail.getEditText()).getText().toString();
         String password= Objects.requireNonNull(inputPassword.getEditText()).getText().toString();
         if (email.isEmpty() || !email.contains("@students.mrgs.school.nz"))
         {
-            showError(inputEmail,"Email is not Valid!");
+//          Show error method created which lets the user know if the email is valid or not
+            showError(inputEmail,"Email is not Valid! Please enter a valid Email!");
 
-        }else if(password.isEmpty() || password.length()<5)
+        }else if(password.isEmpty() || password.length()<8)
         {
-            showError(inputPassword,"Password must be greater than 5 digits!");
+//          Show error method which lets the user know if the password entered is 8 digits or no
+//          I coded it 8 digits password so that the user can have a strong and more secure password
+            showError(inputPassword,"Password must be greater than 8 digits!");
         }
+//      If the email and password entered are valid
         else
         {
+//          Loading bar which informs the user if the authentication was successful or no
             mLoadingBar.setTitle("Login");
             mLoadingBar.setMessage("Please Wait, Loading soon!");
             mLoadingBar.setCanceledOnTouchOutside(false);
             mLoadingBar.show();
+//          If Authentication was successful, It loads MainActivity
             mAuth.signInWithEmailAndPassword(email,password).addOnCompleteListener(task -> {
                 if(task.isSuccessful())
                 {
                     mLoadingBar.dismiss();
                     Toast.makeText(LoginActivity.this, "Login is Successful", Toast.LENGTH_SHORT).show();
                     Intent intent=new Intent(LoginActivity.this,MainActivity2.class);
-                    //Change mainactivity to setupactivity later
                     intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK| Intent.FLAG_ACTIVITY_NEW_TASK);
                     startActivity(intent);
                     finish();
                 }
+//              If Authentication was not successful
                 else
                 {
                     mLoadingBar.dismiss();
-                    Toast.makeText(LoginActivity.this, Objects.requireNonNull(task.getException()).toString(), Toast.LENGTH_SHORT).show();
+                    Toast.makeText(this, "Login Failed! Email or Password entered is incorrect!", Toast.LENGTH_SHORT).show();
                 }
             });
         }
 
     }
 
+//  This Method is for showing errors for Login interface
     private void showError(TextInputLayout field, String text) {
         field.setError(text);
         field.requestFocus();
     }
 //  Login Part Ends
-
 }

@@ -1,14 +1,16 @@
 package com.example.mrgsmanagementapp;
 
+//These are the imports for Event.java
 import java.time.LocalDate;
-import java.time.LocalTime;
 import java.util.ArrayList;
 
 public class Event
 {
 
+//   Creating an ArrayList for events
     public static ArrayList<Event> eventsList = new ArrayList<>();
 
+//  This part receives the date
     public static ArrayList<Event> eventsForDate(LocalDate date)
     {
         ArrayList<Event> events = new ArrayList<>();
@@ -22,16 +24,17 @@ public class Event
         return events;
     }
 
+//  Setting variables
     private String name;
     private LocalDate date;
-//    private LocalTime time;
 
+//  Generating constructors for each of the variables
     public Event(String name, LocalDate date) {
         this.name = name;
         this.date = date;
-//        this.time = time;
     }
 
+//  Getters and Setters for name,date and time
     public String getName() {
         return name;
     }
@@ -48,11 +51,4 @@ public class Event
         this.date = date;
     }
 
-//    public LocalTime getTime() {
-//        return time;
-//    }
-//
-//    public void setTime(LocalTime time) {
-//        this.time = time;
-//    }
 }
