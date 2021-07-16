@@ -62,7 +62,7 @@ public class LoginActivity extends AppCompatActivity {
         SharedPreferences preferences = getSharedPreferences("checkbox", MODE_PRIVATE);
         String checkbox = preferences.getString("remember_me","");
         if(checkbox.equals("true")){
-            Intent intent = new Intent(LoginActivity.this, MainActivity2.class);
+            Intent intent = new Intent(LoginActivity.this, MainActivity.class);
             startActivity(intent);
         }
 
@@ -84,7 +84,7 @@ public class LoginActivity extends AppCompatActivity {
 
 //      This is for redirecting the user to Main Activity if the user's authentication entered is correct
         btnLogin.setOnClickListener(v -> {
-            Intent intent = new Intent(LoginActivity.this, MainActivity2.class);
+            Intent intent = new Intent(LoginActivity.this, MainActivity.class);
             startActivity(intent);
         });
 
@@ -94,12 +94,12 @@ public class LoginActivity extends AppCompatActivity {
             startActivity(intent);
         });
 //      This part runs the AttemptLogin on click of login button
-        btnLogin.setOnClickListener(v -> AtemptLogin());
+        btnLogin.setOnClickListener(v -> AttemptLogin());
     }
 
 //  Method for AttemptLogin
 //  This part ensures that the user enters valid email and valid password
-    private void AtemptLogin() {
+    private void AttemptLogin() {
         String email= Objects.requireNonNull(inputEmail.getEditText()).getText().toString();
         String password= Objects.requireNonNull(inputPassword.getEditText()).getText().toString();
         if (email.isEmpty() || !email.contains("@students.mrgs.school.nz"))
@@ -127,7 +127,7 @@ public class LoginActivity extends AppCompatActivity {
                 {
                     mLoadingBar.dismiss();
                     Toast.makeText(LoginActivity.this, "Login is Successful", Toast.LENGTH_SHORT).show();
-                    Intent intent=new Intent(LoginActivity.this,MainActivity2.class);
+                    Intent intent=new Intent(LoginActivity.this, MainActivity.class);
                     intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK| Intent.FLAG_ACTIVITY_NEW_TASK);
                     startActivity(intent);
                     finish();

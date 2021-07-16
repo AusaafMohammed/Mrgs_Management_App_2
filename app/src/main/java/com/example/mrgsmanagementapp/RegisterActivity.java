@@ -8,7 +8,6 @@ import android.content.Intent;
 import android.os.Bundle;
 //import android.view.View;
 import android.widget.Button;
-import android.widget.TextView;
 import android.widget.Toast;
 
 //import com.google.android.gms.tasks.OnCompleteListener;
@@ -43,12 +42,12 @@ public class RegisterActivity extends AppCompatActivity {
         mLoadingBar=new ProgressDialog(this);
 
 //      This part runs the AttemptRegistration on click of Register button
-        btnRegister.setOnClickListener(v -> AtemptRegistration());
+        btnRegister.setOnClickListener(v -> AttemptRegistration());
     }
 
 //  Method for AttemptRegistration
 //  This part ensures that the user enters valid email and valid password and also confirmation of password matches the password or not
-    private void AtemptRegistration() {
+    private void AttemptRegistration() {
         String email= Objects.requireNonNull(inputEmail.getEditText()).getText().toString();
         String password= Objects.requireNonNull(inputPassword.getEditText()).getText().toString();
         String confirmPassword= Objects.requireNonNull(inputConfirmPassword.getEditText()).getText().toString();
@@ -82,8 +81,7 @@ public class RegisterActivity extends AppCompatActivity {
                 {
                     mLoadingBar.dismiss();
                     Toast.makeText(RegisterActivity.this, "Registration is Successful", Toast.LENGTH_SHORT).show();
-                    Intent intent=new Intent(RegisterActivity.this, MainActivity2.class);
-                    //Change mainactivity to setupactivity later
+                    Intent intent=new Intent(RegisterActivity.this, MainActivity.class);
                     intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK| Intent.FLAG_ACTIVITY_NEW_TASK);
                     startActivity(intent);
                     finish();

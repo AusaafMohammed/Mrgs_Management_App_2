@@ -3,22 +3,15 @@ package com.example.mrgsmanagementapp;
 //These are the imports for ForgotPassword.java
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Intent;
 import android.os.Bundle;
-//import android.view.View;
 import android.util.Patterns;
-//import android.view.View;
+
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
 
-//import com.google.android.gms.tasks.OnCompleteListener;
-//import com.google.android.gms.tasks.Task;
-//import com.google.android.material.textfield.TextInputLayout;
 import com.google.firebase.auth.FirebaseAuth;
 
-//import org.jetbrains.annotations.NotNull;
 
 import java.util.Objects;
 
@@ -26,7 +19,7 @@ public class ForgotPassword extends AppCompatActivity {
 
 //  These are for creating variables for Authentication and EditText
     FirebaseAuth mAuth;
-    private EditText edittextEmail;
+    private EditText ETEmail;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,7 +27,7 @@ public class ForgotPassword extends AppCompatActivity {
         setContentView(R.layout.activity_forgot_password);
 
 //      Assigning Variables with id's defined in activity_forgot.xml
-        edittextEmail=findViewById(R.id.edittextEmail);
+        ETEmail =findViewById(R.id.edittextEmail);
         Button btnResetPassword = findViewById(R.id.btnResetPassword);
         mAuth=FirebaseAuth.getInstance();
 
@@ -45,18 +38,18 @@ public class ForgotPassword extends AppCompatActivity {
 //  Method for resetPassword
 //  This part ensures that the user enters an email address and also to ensure that the email address entered is valid or not
     private void resetPassword() {
-        String email = Objects.requireNonNull(Objects.requireNonNull(edittextEmail.getText()).toString().trim());
+        String email = Objects.requireNonNull(Objects.requireNonNull(ETEmail.getText()).toString().trim());
 
         if(email.isEmpty()){
 //          If email is not entered
-            edittextEmail.setError("Email is required!");
-            edittextEmail.requestFocus();
+            ETEmail.setError("Email is required!");
+            ETEmail.requestFocus();
             return;
         }
         if(!Patterns.EMAIL_ADDRESS.matcher(email).matches()){
 //          If email entered is incorrect
-            edittextEmail.setError("Please provide valid email! Please provide your account email!");
-            edittextEmail.requestFocus();
+            ETEmail.setError("Please provide valid email! Please provide your account email!");
+            ETEmail.requestFocus();
             return;
         }
 
