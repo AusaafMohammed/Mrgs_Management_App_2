@@ -53,4 +53,11 @@
     <string name="event">Event</string>
     <string name="time">Select Time</string>
     <string name="one">1</string>
+    <string name="sunday">SUN</string>
+    <string name="monday">MON</string>
+    <string name="tuesday">TUE</string>
+    <string name="wednesday">WED</string>
+    <string name="thursday">THUR</string>
+    <string name="friday">FRI</string>
+    <string name="saturday">SAT</string>
 </resources>

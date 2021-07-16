@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -16,6 +15,7 @@
         android:layout_marginTop="20dp"
         android:text="@string/name_of_the_event"
         android:textSize="20sp"
+        android:fontFamily="@font/playfair_display_bold"
         android:textAlignment="center"
         android:textColor="@color/black" />
 
@@ -26,7 +26,10 @@
         android:layout_gravity="center"
         android:textSize="20sp"
         android:ems="10"
-        android:inputType="text" />
+        android:fontFamily="@font/pt_serif_regular"
+        android:inputType="text"
+        android:autofillHints=""
+        tools:ignore="LabelFor" />
 
     <TextView
         android:id="@+id/eventDateTV"
@@ -35,6 +38,7 @@
         android:layout_gravity="center"
         android:layout_marginTop="20dp"
         android:text="@string/date"
+        android:fontFamily="@font/playfair_display_regular"
         android:textSize="20sp"
         android:textAlignment="center"
         android:textColor="@color/black" />
@@ -47,6 +51,7 @@
         android:layout_gravity="center"
         android:layout_marginTop="20dp"
         android:text="@string/time"
+        android:fontFamily="@font/playfair_display_bold"
         android:textSize="20sp"
         android:textAlignment="center"
         android:textColor="@color/white" />
@@ -62,6 +67,7 @@
         android:onClick="saveEventAction"
         android:layout_gravity="center"
         android:textSize="20sp"
+        android:fontFamily="@font/playfair_display_bold"
         tools:ignore="OnClick" />
 
 </LinearLayout>

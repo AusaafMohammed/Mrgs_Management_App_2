@@ -9,16 +9,6 @@
     android:background="@drawable/gradient"
     android:id="@+id/fragment_todolist">
 
-<!--    <Button-->
-<!--        android:id="@+id/Return2"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_marginBottom="64dp"-->
-<!--        android:text="@string/return2"-->
-<!--        app:layout_constraintBottom_toBottomOf="parent"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:layout_constraintStart_toStartOf="parent" />-->
-
     <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:id="@+id/coordinatorLayout"
         android:layout_width="match_parent"
