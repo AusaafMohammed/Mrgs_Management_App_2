@@ -33,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
             case R.id.todolist:
                 selectedFragment= new ToDoListFragment();
                 break;
-            case R.id.past_papers:
+            case R.id.TV_about_howto:
                 selectedFragment= new AboutFragment();
                 break;
             case R.id.planner:

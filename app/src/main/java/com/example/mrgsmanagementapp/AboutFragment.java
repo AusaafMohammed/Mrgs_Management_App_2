@@ -21,7 +21,7 @@ public class AboutFragment extends Fragment {
     public View onCreateView(@NonNull @NotNull LayoutInflater inflater, @Nullable @org.jetbrains.annotations.Nullable ViewGroup container, @Nullable @org.jetbrains.annotations.Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_about,container,false);
 
-        Button btnPastPapers = view.findViewById(R.id.btnPastPapers);
+        Button btnPastPapers = view.findViewById(R.id.btnAboutUs);
 
         btnPastPapers.setOnClickListener(v -> {
             Intent intent = new Intent(getActivity(), AboutActivity.class);

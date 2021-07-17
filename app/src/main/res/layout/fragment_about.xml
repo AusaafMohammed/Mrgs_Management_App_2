@@ -5,28 +5,113 @@
     android:background="@drawable/gradient">
 
     <TextView
-        android:id="@+id/past_papers"
-        android:layout_width="wrap_content"
+        android:id="@+id/TV_about_howto"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textColor="@color/black"
-        android:text="@string/about_us"
-        android:textSize="30sp"
-        android:layout_centerInParent="true">
+        android:text="@string/about_us_how_to"
+        android:textAllCaps="true"
+        android:fontFamily="@font/playfair_display_bold"
+        android:textAlignment="center"
+        android:textSize="18sp"
+        android:padding="10dp"
+        android:layout_marginTop="5dp">
+    </TextView>
 
+    <TextView
+        android:id="@+id/TV_how_about"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/TV_about_howto"
+        android:textColor="@color/black"
+        android:text="@string/about_help_1"
+        android:textAlignment="center"
+        android:textSize="16sp"
+        android:padding="10dp"
+        android:layout_marginTop="10dp">
+    </TextView>
+
+    <TextView
+        android:id="@+id/TV_how_about_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/TV_how_about"
+        android:textColor="@color/black"
+        android:text="@string/about_help_2"
+        android:textAlignment="center"
+        android:textSize="16sp"
+        android:padding="10dp"
+        android:layout_marginTop="10dp">
+    </TextView>
+
+    <TextView
+        android:id="@+id/TV_how_about_3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/TV_how_about_2"
+        android:textColor="@color/black"
+        android:text="@string/about_help_3"
+        android:textAlignment="center"
+        android:textSize="16sp"
+        android:padding="10dp"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="10dp">
+    </TextView>
+
+    <TextView
+        android:id="@+id/TV_how_about_4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/TV_how_about_3"
+        android:textColor="@color/black"
+        android:text="@string/about_help_4"
+        android:textAlignment="center"
+        android:textSize="16sp"
+        android:padding="10dp"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="10dp">
+    </TextView>
+
+    <TextView
+        android:id="@+id/TV_how_about_5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/TV_how_about_4"
+        android:textColor="@color/black"
+        android:text="@string/about_help_5"
+        android:textAlignment="center"
+        android:textSize="16sp"
+        android:padding="10dp"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="10dp">
+    </TextView>
+
+    <TextView
+        android:id="@+id/TV_how_about_6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/TV_how_about_5"
+        android:textColor="@color/black"
+        android:text="@string/about_help_6"
+        android:textAlignment="center"
+        android:textSize="16sp"
+        android:padding="10dp"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="10dp">
     </TextView>
 
     <Button
-        android:id="@+id/btnPastPapers"
+        android:id="@+id/btnAboutUs"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/TV_how_about_6"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="15dp"
         android:text="@string/about_us"
+        android:textAllCaps="true"
+        android:textColor="@color/white"
         android:textSize="16sp"
         android:textStyle="bold"
-        android:textColor="@color/white"
-        android:textAllCaps="true"
-        android:layout_centerInParent="true"
-        android:layout_below="@+id/past_papers"
-        android:layout_marginTop="36dp"
         />
 
 </RelativeLayout>
