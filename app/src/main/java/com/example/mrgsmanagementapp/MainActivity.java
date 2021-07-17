@@ -7,7 +7,6 @@ import androidx.fragment.app.Fragment;
 
 import android.annotation.SuppressLint;
 import android.content.DialogInterface;
-import android.graphics.fonts.FontFamily;
 import android.os.Bundle;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
@@ -20,10 +19,33 @@ public class MainActivity extends AppCompatActivity {
 
         BottomNavigationView bottomNavigationView=findViewById(R.id.bottom_nav);
         bottomNavigationView.setOnNavigationItemSelectedListener(navigationItemSelectedListener);
-        getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new PastPapersFragment()).commit();
+        bottomNavigationView.setSelectedItemId(R.id.todolist);
+        getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new ToDoListFragment()).commit();
 
     }
 
+    @SuppressLint("NonConstantResourceId")
+    private final BottomNavigationView.OnNavigationItemSelectedListener navigationItemSelectedListener = item -> {
+
+        Fragment selectedFragment=null;
+        switch (item.getItemId())
+        {
+            case R.id.todolist:
+                selectedFragment= new ToDoListFragment();
+                break;
+            case R.id.past_papers:
+                selectedFragment= new AboutFragment();
+                break;
+            case R.id.planner:
+                selectedFragment= new PlannerFragment();
+                break;
+        }
+        assert selectedFragment != null;
+        getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,selectedFragment).commit();
+        return true;
+    };
+
+//  This part of the code is for confirmation if the user wants to exit the app or no
     @Override
     public void onBackPressed() {
 
@@ -47,25 +69,4 @@ public class MainActivity extends AppCompatActivity {
         AlertDialog alertDialog = builder.create();
         alertDialog.show();
     }
-
-    @SuppressLint("NonConstantResourceId")
-    private final BottomNavigationView.OnNavigationItemSelectedListener navigationItemSelectedListener = item -> {
-
-        Fragment selectedFragment=null;
-        switch (item.getItemId())
-        {
-            case R.id.todolist:
-                selectedFragment= new ToDoListFragment();
-                break;
-            case R.id.past_papers:
-                selectedFragment= new PastPapersFragment();
-                break;
-            case R.id.planner:
-                selectedFragment= new PlannerFragment();
-                break;
-        }
-        assert selectedFragment != null;
-        getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,selectedFragment).commit();
-        return true;
-    };
 }

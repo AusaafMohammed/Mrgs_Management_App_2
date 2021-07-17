@@ -89,7 +89,10 @@
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="@+id/btnLogin"
         app:layout_constraintStart_toStartOf="@+id/btnLogin"
-        app:layout_constraintTop_toBottomOf="@+id/btnLogin" />
+        app:layout_constraintTop_toBottomOf="@+id/btnLogin"/>
+<!--    I can disable or enable the create new account option...-->
+<!--    This means only authorised people can create new accounts for new students-->
+<!--        android:visibility="gone"/>-->
 
     <Button
         android:id="@+id/btnLogin"

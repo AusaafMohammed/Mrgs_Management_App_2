@@ -13,10 +13,9 @@
         android:theme="@style/Theme.MrgsManagementApp">
         <activity android:name=".EventEditActivity" />
         <activity android:name=".WeekViewActivity" />
-        <activity android:name=".WebViewActivity" />
         <activity android:name=".PlannerActivity" />
         <activity android:name=".ToDoListActivity" />
-        <activity android:name=".PastPapersActivity" />
+        <activity android:name=".AboutActivity" />
         <activity android:name=".ForgotPassword" />
         <activity android:name=".MainActivity" />
         <activity android:name=".RegisterActivity" />

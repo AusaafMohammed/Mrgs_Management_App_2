@@ -9,7 +9,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textColor="@color/black"
-        android:text="@string/past_papers"
+        android:text="@string/about_us"
         android:textSize="30sp"
         android:layout_centerInParent="true">
 
@@ -19,7 +19,7 @@
         android:id="@+id/btnPastPapers"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/past_papers"
+        android:text="@string/about_us"
         android:textSize="16sp"
         android:textStyle="bold"
         android:textColor="@color/white"

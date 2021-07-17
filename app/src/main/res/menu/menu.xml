@@ -3,16 +3,15 @@
 
 <!--    The Items my bottom navigation bar contains -->
     <item
-        android:id="@+id/past_papers"
-        android:icon="@drawable/ic_baseline_notes_24"
-        android:title="@string/past_papers" />
+        android:id="@+id/planner"
+        android:icon="@drawable/ic_baseline_calendar_today_24"
+        android:title="@string/planner" />
     <item
         android:id="@+id/todolist"
         android:icon="@drawable/ic_baseline_format_list_bulleted_24"
         android:title="@string/todolist" />
     <item
-        android:id="@+id/planner"
-        android:icon="@drawable/ic_baseline_calendar_today_24"
-        android:title="@string/planner" />
-
+        android:id="@+id/past_papers"
+        android:icon="@drawable/ic_baseline_notes_24"
+        android:title="@string/about_us" />
 </menu>

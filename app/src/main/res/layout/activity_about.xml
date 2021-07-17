@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gradient"
+    tools:context=".AboutActivity">
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/mrgs_logo"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="24dp"
+        android:contentDescription="@string/logo"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:srcCompat="@drawable/logo2" />
+
+    <ImageView
+        android:id="@+id/kamar_logo"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="32dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/mrgs_logo"
+        app:srcCompat="@drawable/kamar"
+        android:contentDescription="@string/logo" />
+
+    <ImageView
+        android:id="@+id/nzqa_logo"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="32dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/kamar_logo"
+        app:srcCompat="@drawable/nzqa"
+        android:contentDescription="@string/logo" />
+
+    <TextView
+        android:id="@+id/TV_media"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:fontFamily="@font/playfair_display_bold"
+        android:text="@string/about_info"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/nzqa_logo" />
+
+    <ImageView
+        android:id="@+id/ig_logo"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:layout_marginTop="24dp"
+        app:layout_constraintEnd_toEndOf="@+id/TV_media"
+        app:layout_constraintStart_toStartOf="@+id/TV_media"
+        app:layout_constraintTop_toBottomOf="@+id/TV_media"
+        app:srcCompat="@drawable/ig_logo"
+        android:contentDescription="@string/logo" />
+
+    <ImageView
+        android:id="@+id/fb_logo"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        app:layout_constraintEnd_toStartOf="@+id/ig_logo"
+        app:layout_constraintStart_toStartOf="@+id/TV_media"
+        app:layout_constraintTop_toTopOf="@+id/ig_logo"
+        app:srcCompat="@drawable/fb_logo"
+        android:contentDescription="@string/logo" />
+
+    <ImageView
+        android:id="@+id/twitter_logo"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        app:layout_constraintEnd_toEndOf="@+id/TV_media"
+        app:layout_constraintStart_toEndOf="@+id/ig_logo"
+        app:layout_constraintTop_toTopOf="@+id/ig_logo"
+        app:srcCompat="@drawable/twitter_logo"
+        android:contentDescription="@string/logo" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:fontFamily="@font/playfair_display_bold"
+        android:text="@string/about_us"
+        android:textAllCaps="true"
+        android:textColor="@color/black"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/TV_school_info"
+        android:layout_width="215dp"
+        android:layout_height="80dp"
+        android:textSize="14sp"
+        android:fontFamily="@font/playfair_display_regular"
+        android:text="@string/school_info"
+        app:layout_constraintBottom_toBottomOf="@+id/mrgs_logo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/mrgs_logo"
+        app:layout_constraintTop_toTopOf="@+id/mrgs_logo" />
+
+    <TextView
+        android:id="@+id/TV_kamar_info"
+        android:layout_width="215dp"
+        android:layout_height="80dp"
+        android:textSize="14sp"
+        android:text="@string/kamar_info"
+        android:fontFamily="@font/playfair_display_regular"
+        app:layout_constraintBottom_toBottomOf="@+id/kamar_logo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/kamar_logo"
+        app:layout_constraintTop_toTopOf="@+id/kamar_logo" />
+
+    <TextView
+        android:id="@+id/TV_nzqa_info"
+        android:layout_width="215dp"
+        android:layout_height="80dp"
+        android:text="@string/nzqa_info"
+        android:textSize="14sp"
+        android:fontFamily="@font/playfair_display_regular"
+        app:layout_constraintBottom_toBottomOf="@+id/nzqa_logo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/nzqa_logo"
+        app:layout_constraintTop_toTopOf="@+id/nzqa_logo" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

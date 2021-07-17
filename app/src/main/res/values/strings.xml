@@ -12,7 +12,7 @@
     <string name="register">Register</string>
     <string name="have_account">Already Have an Account?</string>
     <string name="planner">Planning</string>
-    <string name="past_papers">Past Exam Papers</string>
+    <string name="about_us">About Us</string>
     <string name="todolist">To Do List</string>
     <string name="remember_me">Remember me</string>
     <string name="logout">Log Out</string>
@@ -60,4 +60,9 @@
     <string name="thursday">THUR</string>
     <string name="friday">FRI</string>
     <string name="saturday">SAT</string>
+    <string name="logo">Logo</string>
+    <string name="about_info">Our social media websites you could check out!</string>
+    <string name="school_info">Hello there! This is our school website. Just click on our sursum logo and it will direct you to our school website!</string>
+    <string name="kamar_info">This is our kamar portal where you can always check your results and pathways. You can click on the logo and it will direct you to kamar login!</string>
+    <string name="nzqa_info">This is NZQA website and this is only for senior students! This will redirect you to nzqa login where senior students can check their grades!</string>
 </resources>
