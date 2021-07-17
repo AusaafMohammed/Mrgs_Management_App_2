@@ -17,13 +17,9 @@
     <string name="remember_me">Remember me</string>
     <string name="logout">Log Out</string>
     <string name="title_activity_forgot">ForgotActivity</string>
-    <!--    &lt;!&ndash; Strings used for fragments for navigation &ndash;&gt;-->
-    <!--    <string name="first_fragment_label">First Fragment</string>-->
-    <!--    <string name="second_fragment_label">Second Fragment</string>-->
-    <!--    <string name="next">Next</string>-->
-    <!--    <string name="previous">Previous</string>-->
+    <string name="logo">Logo</string>
 
-    <!--These strings are used in forgot password activity-->
+    <!--These strings are used in forgot password section of my application-->
     <string name="forgot_password_info">
         Forgot your password? Do not worry! Please enter your email address below!
     </string>
@@ -31,9 +27,8 @@
         We will send you a reset password link and you could simply click it to change your password!
     </string>
     <string name="reset_password">Reset Password</string>
-    <string name="go_back">Return back to login page?</string>
 
-    <!--These strings are used in update data, retrieved layout and input file-->
+    <!--These strings are used in todolist section of my application-->
     <string name="update_task">Update your task</string>
     <string name="task">Task</string>
     <string name="description">Description</string>
@@ -44,7 +39,15 @@
     <string name="cancel">Cancel</string>
     <string name="save">Save</string>
 
-<!--    <string name="return2">Return back to main interface</string>-->
+    <!--These strings are also used in todolist section (todolist fragment) of my application-->
+    <string name="to_do_help_1">1) You can simply tap on the floating button on bottom right of the screen to add a new task.</string>
+    <string name="to_do_help_2">2) You can enter your task and description in task and description fields.</string>
+    <string name="to_do_help_3">3) Then you can either save your task or cancel your task.</string>
+    <string name="to_do_help_4">4) If you want, you could later edit or delete your task! This will help you manage your time well!</string>
+    <string name="to_do_help_5">5) You can start this simply by clicking on the button below. This button will redirect you to your to do lists</string>
+    <string name="to_do_how_to">How to use To do list</string>
+
+    <!--These strings are used in planner section of my application-->
     <string name="backward"><![CDATA[<-]]></string>
     <string name="forward"><![CDATA[->]]></string>
     <string name="weekly">Weekly</string>
@@ -60,23 +63,22 @@
     <string name="thursday">THUR</string>
     <string name="friday">FRI</string>
     <string name="saturday">SAT</string>
-    <string name="logo">Logo</string>
-    <string name="about_info">Our social media websites you could check out!</string>
-    <string name="school_info">Hello there! This is our school website. Just click on our sursum logo and it will direct you to our school website!</string>
-    <string name="kamar_info">This is our kamar portal where you can always check your results and pathways. Click on the logo to go to kamar login!</string>
-    <string name="nzqa_info">This is NZQA website. It will direct you to nzqa login where senior students can check their grades!</string>
-    <string name="to_do_help_1">1) You can simply tap on the floating button on bottom right of the screen to add a new task.</string>
-    <string name="to_do_help_2">2) You can enter your task and description in task and description fields.</string>
-    <string name="to_do_help_3">3) Then you can either save your task or cancel your task.</string>
-    <string name="to_do_help_4">4) If you want, you could later edit or delete your task! This will help you manage your time well!</string>
-    <string name="to_do_help_5">5) You can start this simply by clicking on the button below. This button will redirect you to your to do lists</string>
-    <string name="to_do_how_to">How to use To do list</string>
+
+    <!--These strings are also used in planner section (planner fragment) of my application-->
     <string name="planner_how_to">How to use planner</string>
     <string name="planner_help_1">1) Once you click on the planning button below, it will direct you to a calendar</string>
     <string name="planner_help_2">2) On this calendar, you can choose the date you want to add an event</string>
     <string name="planner_help_3">3) You can click on the arrow keys to switch between months. Once you have chosen the date, you can click on weekly button in top center which takes you to weekly calendar</string>
     <string name="planner_help_4">4) This weekly calendar can be used similarly to switch between weeks. You can click on new event button which takes you to a new page where you can add an event</string>
     <string name="planner_help_5">5) Once you have named your event, you can simply choose time and click save</string>
+
+    <!--These strings are used in about us section (about us activity) of my application-->
+    <string name="about_info">Our social media websites you could check out!</string>
+    <string name="school_info">Hello there! This is our school website. Just click on our sursum logo and it will direct you to our school website!</string>
+    <string name="kamar_info">This is our kamar portal where you can always check your results and pathways. Click on the logo to go to kamar login!</string>
+    <string name="nzqa_info">This is NZQA website. It will direct you to nzqa login where senior students can check their grades!</string>
+
+    <!--These strings are also used in about us section (about us fragment) of my application-->
     <string name="about_us">About us</string>
     <string name="about_help_1">1) When the about us button is clicked, a new page opens where you can find several ways to contact us.</string>
     <string name="about_help_2">2) When one of those logo is clicked, it takes you to our page where you can find different things.</string>
