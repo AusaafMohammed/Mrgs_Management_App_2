@@ -65,4 +65,10 @@
     <string name="school_info">Hello there! This is our school website. Just click on our sursum logo and it will direct you to our school website!</string>
     <string name="kamar_info">This is our kamar portal where you can always check your results and pathways. You can click on the logo and it will direct you to kamar login!</string>
     <string name="nzqa_info">This is NZQA website and this is only for senior students! This will redirect you to nzqa login where senior students can check their grades!</string>
+    <string name="to_do_help_1">1) You can simply tap on the floating button on bottom right of the screen to add a new task.</string>
+    <string name="to_do_help_2">2) You can enter your task and description in task and description fields.</string>
+    <string name="to_do_help_3">3) Then you can either save your task or cancel your task.</string>
+    <string name="to_do_help_4">4) If you want, you could later edit or delete your task! This will help you manage your time well!</string>
+    <string name="to_do_help_5">5) You can start this simply by clicking on the button below. This button will redirect you to your to do lists</string>
+    <string name="to_do_how_to">How to use</string>
 </resources>
