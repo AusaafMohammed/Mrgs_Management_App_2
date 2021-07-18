@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".EventEditActivity"
-    android:background="@drawable/gradient">
+    android:background="@drawable/gradient_bg">
 
     <TextView
         android:layout_width="wrap_content"

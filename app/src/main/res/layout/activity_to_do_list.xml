@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ToDoListActivity"
-    android:background="@drawable/gradient"
+    android:background="@drawable/gradient_bg"
     android:id="@+id/fragment_todolist">
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout
@@ -27,7 +27,7 @@
             android:layout_margin="16dp"
             android:backgroundTint="@color/white"
             android:contentDescription="@string/cont_disc"
-            android:src="@drawable/ic_baseline_add_24" />
+            android:src="@drawable/add_vector" />
 
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
