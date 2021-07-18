@@ -10,7 +10,7 @@
         android:id="@+id/cellDayText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:fontFamily="@font/playfair_display_regular"
+        android:fontFamily="@font/blackgrounds"
         android:text="@string/one"
         android:textColor="@color/black"
         android:textSize="20sp"
