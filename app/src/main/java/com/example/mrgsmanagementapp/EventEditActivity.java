@@ -62,7 +62,7 @@ public class EventEditActivity extends AppCompatActivity
         };
 //      I chose to have a scrollable time picker instead of the clock! This part of the code is for the scrollable time picker
         int style = AlertDialog.THEME_HOLO_DARK;
-        TimePickerDialog timePickerDialog = new TimePickerDialog(this, style, onTimeSetListener, hour, minute, false);
+        TimePickerDialog timePickerDialog = new TimePickerDialog(this, style, onTimeSetListener, hour, minute, true);
 //      Title for timepicker
         timePickerDialog.setTitle("Select Time");
         timePickerDialog.show();

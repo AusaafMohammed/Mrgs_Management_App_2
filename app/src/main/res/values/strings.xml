@@ -82,8 +82,8 @@
     <string name="about_us">About us</string>
     <string name="about_help_1">1) When the about us button is clicked, a new page opens where you can find several ways to contact us.</string>
     <string name="about_help_2">2) When one of those logo is clicked, it takes you to our page where you can find different things.</string>
-    <string name="about_help_3">3) 1st one takes you to MRGS website.</string>
-    <string name="about_help_4">4) 2nd one takes you to Kamar Portal.</string>
-    <string name="about_help_5">5) 3rd one takes you to nzqa website.</string>
+    <string name="about_help_3">3) This first link takes you to MRGS website.</string>
+    <string name="about_help_4">4) This second link takes you to Kamar Portal.</string>
+    <string name="about_help_5">5) This third link takes you to nzqa website.</string>
     <string name="about_help_6">6) The bottom ones are our social media where you can contact us.</string>
 </resources>
