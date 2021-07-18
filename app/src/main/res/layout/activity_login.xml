@@ -89,10 +89,10 @@
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="@+id/btnLogin"
         app:layout_constraintStart_toStartOf="@+id/btnLogin"
-        app:layout_constraintTop_toBottomOf="@+id/btnLogin"/>
-<!--    I can disable or enable the create new account option...-->
+        app:layout_constraintTop_toBottomOf="@+id/btnLogin"
+        android:visibility="gone"/>
+<!--    I can disable or enable the create new account option using this visibility option...-->
 <!--    This means only authorised people can create new accounts for new students-->
-<!--        android:visibility="gone"/>-->
 
     <Button
         android:id="@+id/btnLogin"
@@ -105,14 +105,4 @@
         app:layout_constraintStart_toStartOf="@+id/inputPassword"
         app:layout_constraintTop_toBottomOf="@+id/forgotPassword" />
 
-    <CheckBox
-        android:id="@+id/remember_me"
-        android:layout_width="164dp"
-        android:layout_height="35dp"
-        android:layout_marginTop="16dp"
-        android:fontFamily="@font/playfair_display_regular"
-        android:text="@string/remember_me"
-        android:textSize="18sp"
-        app:layout_constraintStart_toStartOf="@+id/inputPassword"
-        app:layout_constraintTop_toBottomOf="@+id/inputPassword" />
 </androidx.constraintlayout.widget.ConstraintLayout>

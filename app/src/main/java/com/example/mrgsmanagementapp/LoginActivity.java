@@ -33,7 +33,7 @@ public class LoginActivity extends AppCompatActivity {
     TextView forgotPassword,CreateNewAccount;
     ProgressDialog mLoadingBar;
     FirebaseAuth mAuth;
-    CheckBox remember_me;
+//    CheckBox remember_me;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,7 +45,7 @@ public class LoginActivity extends AppCompatActivity {
         inputPassword=findViewById(R.id.inputPassword);
         btnLogin=findViewById(R.id.btnLogin);
         CreateNewAccount=findViewById(R.id.CreateNewAccount);
-        remember_me=findViewById(R.id.remember_me);
+//        remember_me=findViewById(R.id.remember_me);
 
 //      These are for LoadingBar and Authentication
         mLoadingBar=new ProgressDialog(this);
@@ -65,20 +65,6 @@ public class LoginActivity extends AppCompatActivity {
             Intent intent = new Intent(LoginActivity.this, MainActivity.class);
             startActivity(intent);
         }
-
-//      This part of the code is for checking if the remember me button is checked or no
-        remember_me.setOnCheckedChangeListener((compoundButton, isChecked) -> {
-            if(compoundButton.isChecked()) {
-                SharedPreferences.Editor editor = preferences.edit();
-                editor.putString("remember_me","true");
-                editor.apply();
-            }else if (!compoundButton.isChecked()) {
-                SharedPreferences.Editor editor = preferences.edit();
-                editor.putString("remember_me","false");
-                editor.apply();
-            }
-        });
-//      Checkbox Part Ends
 
 //      Login part starts
 
