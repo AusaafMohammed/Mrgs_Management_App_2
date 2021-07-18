@@ -160,7 +160,6 @@ public class ToDoListActivity extends AppCompatActivity {
         FirebaseRecyclerAdapter<Model, MyViewHolder> adapter = new FirebaseRecyclerAdapter<Model, MyViewHolder>(options) {
             @Override
             protected void onBindViewHolder(@NonNull @NotNull ToDoListActivity.MyViewHolder holder, int position, @NonNull @NotNull Model model) {
-                holder.setDate();
                 holder.setTask(model.getTask());
                 holder.setDescription(model.getDescription());
                 holder.mView.setOnClickListener(v -> {
@@ -200,14 +199,6 @@ public class ToDoListActivity extends AppCompatActivity {
         public  void setDescription(String desc){
             TextView descTV = mView.findViewById(R.id.descriptionTv);
             descTV.setText(desc);
-        }
-        public void setDate(){
-            TextView textViewDate = mView.findViewById(R.id.dateTv);
-
-            Calendar calendar = Calendar.getInstance();
-            String currentDate = DateFormat.getDateInstance().format(calendar.getTime());
-
-            textViewDate.setText(currentDate);
         }
     }
 
