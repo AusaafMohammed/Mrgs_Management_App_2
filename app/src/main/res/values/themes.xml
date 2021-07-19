@@ -14,12 +14,4 @@
         <!-- Customize your theme here. -->
     </style>
 
-    <style name="Theme.MrgsManagementApp.NoActionBar">
-        <item name="windowActionBar">false</item>
-        <item name="windowNoTitle">true</item>
-    </style>
-
-    <style name="Theme.MrgsManagementApp.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
-
-    <style name="Theme.MrgsManagementApp.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 </resources>

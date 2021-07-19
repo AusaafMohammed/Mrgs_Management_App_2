@@ -10,13 +10,9 @@
     <string name="cont_disc">Logo</string>
     <string name="confirm_password">Confirm Password</string>
     <string name="register">Register</string>
-    <string name="have_account">Already Have an Account?</string>
     <string name="planner">Planning</string>
     <string name="about_us_how_to">How to use about us</string>
     <string name="todolist">To Do List</string>
-    <string name="remember_me">Remember me</string>
-    <string name="logout">Log Out</string>
-    <string name="title_activity_forgot">ForgotActivity</string>
     <string name="logo">Logo</string>
 
     <!--These strings are used in forgot password section of my application-->
