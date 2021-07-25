@@ -7,13 +7,24 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.WindowManager;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
+import android.widget.TextView;
 
 public class SplashActivity extends AppCompatActivity {
+
+    TextView copyright_text;
+    Animation move_anim;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
+
+        copyright_text = findViewById(R.id.copyright);
+        move_anim = AnimationUtils.loadAnimation(getApplicationContext(),
+                R.anim.move);
+        copyright_text.startAnimation(move_anim);
 
         //This removes our status bar
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
@@ -28,6 +39,6 @@ public class SplashActivity extends AppCompatActivity {
 
 //      This is for how amount of period the splash screen should stay for... In my application, the splash screen stays for 3 seconds
         Handler handler=new Handler();
-        handler.postDelayed(runnable,3000);
+        handler.postDelayed(runnable,5000);
     }
 }
