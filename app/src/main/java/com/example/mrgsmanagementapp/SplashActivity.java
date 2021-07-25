@@ -21,6 +21,7 @@ public class SplashActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
 
+//      For moving copyright text animation
         copyright_text = findViewById(R.id.copyright);
         move_anim = AnimationUtils.loadAnimation(getApplicationContext(),
                 R.anim.move);
