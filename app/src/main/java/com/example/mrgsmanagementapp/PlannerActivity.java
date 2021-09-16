@@ -81,10 +81,4 @@ public class PlannerActivity extends AppCompatActivity implements CalendarAdapte
             setMonthView();
         }
     }
-
-//  This part of the code is for starting WeekViewActivity
-    public void weeklyAction(View view)
-    {
-        startActivity(new Intent(this, WeekViewActivity.class));
-    }
 }

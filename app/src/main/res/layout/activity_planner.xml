@@ -7,17 +7,6 @@
     tools:context=".PlannerActivity"
     android:background="@drawable/gradient_bg"
     android:orientation="vertical">
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:fontFamily="@font/notoserif_bold"
-        android:onClick="weeklyAction"
-        android:text="@string/weekly"
-        android:textColor="@color/white"
-        android:textSize="20sp"
-        android:textStyle="bold" />
     
     <LinearLayout
         android:layout_width="match_parent"
