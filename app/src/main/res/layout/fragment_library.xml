@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gradient_bg">
+
+
+    <TextView
+        android:id="@+id/TV_planner_howto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:text="@string/planner_how_to"
+        android:textAllCaps="true"
+        android:fontFamily="@font/mandhor"
+        android:textAlignment="center"
+        android:textSize="18sp"
+        android:padding="10dp"
+        android:layout_marginTop="5dp">
+    </TextView>
+
+<!--    <TextView-->
+<!--        android:id="@+id/TV_how_planner"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_below="@+id/TV_planner_howto"-->
+<!--        android:textColor="@color/black"-->
+<!--        android:text="@string/planner_help_1"-->
+<!--        android:fontFamily="@font/playfair_display_regular"-->
+<!--        android:textAlignment="center"-->
+<!--        android:textSize="16sp"-->
+<!--        android:padding="10dp"-->
+<!--        android:layout_marginTop="10dp">-->
+<!--    </TextView>-->
+
+<!--    <TextView-->
+<!--        android:id="@+id/TV_how_planner_2"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:textColor="@color/black"-->
+<!--        android:layout_below="@+id/TV_how_planner"-->
+<!--        android:layout_marginTop="10dp"-->
+<!--        android:text="@string/planner_help_2"-->
+<!--        android:fontFamily="@font/playfair_display_regular"-->
+<!--        android:padding="10dp"-->
+<!--        android:textAlignment="center"-->
+<!--        android:textSize="16sp"-->
+<!--        android:layout_centerInParent="true">-->
+<!--    </TextView>-->
+
+<!--    <TextView-->
+<!--        android:id="@+id/TV_how_planner_3"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:textColor="@color/black"-->
+<!--        android:layout_below="@+id/TV_how_planner_2"-->
+<!--        android:layout_marginTop="10dp"-->
+<!--        android:text="@string/planner_help_3"-->
+<!--        android:fontFamily="@font/playfair_display_regular"-->
+<!--        android:padding="10dp"-->
+<!--        android:textAlignment="center"-->
+<!--        android:textSize="16sp"-->
+<!--        android:layout_centerInParent="true">-->
+<!--    </TextView>-->
+
+<!--    <TextView-->
+<!--        android:id="@+id/TV_how_planner_4"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:textColor="@color/black"-->
+<!--        android:layout_below="@+id/TV_how_planner_3"-->
+<!--        android:layout_marginTop="10dp"-->
+<!--        android:text="@string/planner_help_4"-->
+<!--        android:fontFamily="@font/playfair_display_regular"-->
+<!--        android:padding="10dp"-->
+<!--        android:textAlignment="center"-->
+<!--        android:textSize="16sp"-->
+<!--        android:layout_centerInParent="true">-->
+<!--    </TextView>-->
+
+<!--    <TextView-->
+<!--        android:id="@+id/TV_how_planner_5"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:textColor="@color/black"-->
+<!--        android:layout_below="@+id/TV_how_planner_4"-->
+<!--        android:layout_marginTop="10dp"-->
+<!--        android:text="@string/planner_help_5"-->
+<!--        android:fontFamily="@font/playfair_display_regular"-->
+<!--        android:padding="10dp"-->
+<!--        android:textAlignment="center"-->
+<!--        android:textSize="16sp"-->
+<!--        android:layout_centerInParent="true">-->
+<!--    </TextView>-->
+
+    <Button
+        android:id="@+id/btn_library"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/TV_planner_howto"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="15dp"
+        android:text="@string/library"
+        android:fontFamily="@font/notoserif_bold"
+        android:textAllCaps="true"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+
+</RelativeLayout>

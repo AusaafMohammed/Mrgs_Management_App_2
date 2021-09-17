@@ -3,6 +3,10 @@
 
 <!--    The Items my bottom navigation bar contains -->
     <item
+        android:id="@+id/library"
+        android:icon="@drawable/ic_baseline_library_books_24"
+        android:title="@string/library"/>
+    <item
         android:id="@+id/planner"
         android:icon="@drawable/planner_vector"
         android:title="@string/planner" />
@@ -14,4 +18,8 @@
         android:id="@+id/TV_about_howto"
         android:icon="@drawable/about_us_vector"
         android:title="@string/about_us" />
+    <item
+        android:id="@+id/profile"
+        android:icon="@drawable/ic_baseline_person_24"
+        android:title="@string/profile"/>
 </menu>

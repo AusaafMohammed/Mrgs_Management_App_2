@@ -39,6 +39,12 @@ public class MainActivity extends AppCompatActivity {
             case R.id.planner:
                 selectedFragment= new PlannerFragment();
                 break;
+            case R.id.library:
+                selectedFragment= new LibraryFragment();
+                break;
+            case R.id.profile:
+                selectedFragment= new ProfileFragment();
+                break;
         }
         assert selectedFragment != null;
         getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,selectedFragment).commit();
