@@ -4,13 +4,10 @@ package com.example.mrgsmanagementapp;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.app.ProgressDialog;
-import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 //import android.view.Display;
@@ -36,7 +33,6 @@ import org.jetbrains.annotations.NotNull;
 //import org.w3c.dom.Text;
 
 import java.text.DateFormat;
-import java.util.Calendar;
 import java.util.Date;
 import java.util.Objects;
 
@@ -86,7 +82,7 @@ public class ToDoListActivity extends AppCompatActivity {
         LayoutInflater inflater = LayoutInflater.from(this);
 
 //      This part reads the input_file.xml file
-        View myView = inflater.inflate(R.layout.input_file, null);
+        View myView = inflater.inflate(R.layout.input_file_todo, null);
 //      Views input_file in dialog box format
         myDialog.setView(myView);
 
@@ -174,7 +170,7 @@ public class ToDoListActivity extends AppCompatActivity {
             @Override
             public MyViewHolder onCreateViewHolder(@NonNull @NotNull ViewGroup parent, int viewType) {
 //              To view retrieved_layout.xml
-                View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.retrieved_layout, parent, false);
+                View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.retrieved_layout_todo, parent, false);
                 return  new MyViewHolder(view);
             }
         };

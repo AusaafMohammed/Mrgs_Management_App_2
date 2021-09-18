@@ -1,27 +1,26 @@
 package com.example.mrgsmanagementapp;
 
-public class Model {
+public class EventModel {
 
-    private String task, description, id, date;
+    private String event, description, id, date;
 
-    public Model() {
+    public EventModel() {
+
     }
 
-    //  Creating constructor
-    public Model(String task, String description, String id, String date) {
-        this.task = task;
+    public EventModel(String event, String description, String id, String date) {
+        this.event = event;
         this.description = description;
         this.id = id;
         this.date = date;
     }
 
-//  Creating getter and setters for all constructors
-    public String getTask() {
-        return task;
+    public String getEvent() {
+        return event;
     }
 
-    public void setTask(String task) {
-        this.task = task;
+    public void setEvent(String event) {
+        this.event = event;
     }
 
     public String getDescription() {

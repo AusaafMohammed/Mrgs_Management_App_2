@@ -81,4 +81,8 @@ public class PlannerActivity extends AppCompatActivity implements CalendarAdapte
             setMonthView();
         }
     }
+
+    public void event_btn (View view) {
+        startActivity(new Intent(this, EventActivity.class));
+    }
 }
