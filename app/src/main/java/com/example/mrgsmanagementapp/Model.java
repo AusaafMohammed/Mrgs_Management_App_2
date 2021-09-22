@@ -4,10 +4,9 @@ public class Model {
 
     private String task, description, id, date;
 
-    public Model() {
+    public Model(){
     }
 
-    //  Creating constructor
     public Model(String task, String description, String id, String date) {
         this.task = task;
         this.description = description;
@@ -15,7 +14,6 @@ public class Model {
         this.date = date;
     }
 
-//  Creating getter and setters for all constructors
     public String getTask() {
         return task;
     }
