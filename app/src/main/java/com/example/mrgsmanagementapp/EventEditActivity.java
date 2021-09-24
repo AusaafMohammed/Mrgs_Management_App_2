@@ -11,6 +11,13 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import com.google.android.material.textfield.TextInputLayout;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.Locale;
 
@@ -19,8 +26,6 @@ public class EventEditActivity extends AppCompatActivity
     //  These are for creating variables
     private EditText eventNameET;
     private TextView eventDateTV;
-    Button timeButton;
-    int hour, minute;
 
     @SuppressLint("SetTextI18n")
     @Override
@@ -28,10 +33,11 @@ public class EventEditActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_event_edit);
         initWidgets();
-        timeButton = findViewById(R.id.eventTimeTV);
 //      for showing the user the selected date they chose to add event in
         eventDateTV.setText("Date: "+ CalendarUtils.formattedDate(CalendarUtils.selectedDate));
+
     }
+
 
     //  initWidgets method
     private void initWidgets()
@@ -46,26 +52,20 @@ public class EventEditActivity extends AppCompatActivity
     {
         String eventName = eventNameET.getText().toString();
         Event newEvent = new Event(eventName, CalendarUtils.selectedDate); // comment this and uncomment the bottom one
-        Event.eventsList.add(newEvent);
-        finish();
-    }
+        if (eventName.isEmpty()){
+            showError(eventNameET,"Please enter an Event");
+        } else {
+            Event.eventsList.add(newEvent);
+            Toast.makeText(EventEditActivity.this, "New Event Added", Toast.LENGTH_SHORT).show();
+            finish();
+        }
 
-    //  This is for the pop up time picker in event
-    public void popTimePicker(View view)
-    {
-        TimePickerDialog.OnTimeSetListener onTimeSetListener = (view1, selectedHour, selectedMinute) -> {
-            hour = selectedHour;
-            minute = selectedMinute;
-//          Format for the time (2 digits)
-            timeButton.setText(String.format(Locale.getDefault(),"%02d:%02d",hour ,minute));
-
-        };
-//      I chose to have a scrollable time picker instead of the clock! This part of the code is for the scrollable time picker
-        int style = AlertDialog.THEME_HOLO_DARK;
-        TimePickerDialog timePickerDialog = new TimePickerDialog(this, style, onTimeSetListener, hour, minute, true);
-//      Title for timepicker
-        timePickerDialog.setTitle("Select Time");
-        timePickerDialog.show();
 
     }
+
+    private void showError(EditText field, String text) {
+        field.setError(text);
+        field.requestFocus();
+    }
+
 }

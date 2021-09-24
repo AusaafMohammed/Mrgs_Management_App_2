@@ -44,19 +44,6 @@
         android:textColor="@color/black" />
 
     <Button
-        android:id="@+id/eventTimeTV"
-        android:onClick="popTimePicker"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="20dp"
-        android:text="@string/time"
-        android:fontFamily="@font/notoserif_bold"
-        android:textSize="20sp"
-        android:textAlignment="center"
-        android:textColor="@color/white" />
-
-    <Button
         android:layout_marginTop="20dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
