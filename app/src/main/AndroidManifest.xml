@@ -21,6 +21,8 @@
         <activity
             android:name=".ProfileActivity"
             android:exported="true" />
+        <activity android:name=".EventEditActivity" />
+        <activity android:name=".WeekViewActivity" />
         <activity android:name=".PlannerActivity" />
         <activity android:name=".ToDoListActivity" />
         <activity android:name=".AboutActivity" />

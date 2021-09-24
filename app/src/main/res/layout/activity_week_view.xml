@@ -4,33 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".PlannerActivity"
+    tools:context=".WeekViewActivity"
     android:background="@drawable/gradient_bg"
     android:orientation="vertical">
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:fontFamily="@font/notoserif_bold"
-        android:onClick="openApp"
-        android:text="Calendar Application"
-        android:textColor="@color/white"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        android:textAllCaps="false"/>
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:fontFamily="@font/notoserif_bold"
-        android:onClick="weeklyAction"
-        android:text="@string/weekly"
-        android:textColor="@color/white"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        android:textAllCaps="true"/>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -49,7 +25,7 @@
             android:textColor="@color/white"
             android:background="@color/black"
             android:textStyle="bold"
-            android:onClick="previousMonthAction"
+            android:onClick="previousWeekAction"
             android:textSize="20sp" />
 
         <TextView
@@ -74,7 +50,7 @@
             android:textColor="@color/white"
             android:background="@color/black"
             android:textStyle="bold"
-            android:onClick="nextMonthAction"
+            android:onClick="nextWeekAction"
             android:textSize="20sp" />
 
     </LinearLayout>
@@ -129,7 +105,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:fontFamily="@font/pt_serif_regular"
+            android:fontFamily="@font/playfair_display_regular"
             android:text="@string/thursday"
             android:textAlignment="center"
             android:textColor="@color/white"
@@ -139,7 +115,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:fontFamily="@font/pt_serif_regular"
+            android:fontFamily="@font/playfair_display_regular"
             android:text="@string/friday"
             android:textAlignment="center"
             android:textColor="@color/white"
@@ -160,7 +136,26 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/calendarRecyclerView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="0dp"
+        android:layout_weight="1"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:background="@color/black"
+        android:fontFamily="@font/notoserif_bold"
+        android:onClick="newEventAction"
+        android:text="@string/new_event"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <ListView
+        android:id="@+id/eventListView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="5" />
 
 </LinearLayout>
-
