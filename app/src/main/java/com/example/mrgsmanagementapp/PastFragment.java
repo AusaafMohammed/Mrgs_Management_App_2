@@ -14,21 +14,21 @@ import android.widget.Button;
 
 import org.jetbrains.annotations.NotNull;
 
-public class ProfileFragment extends Fragment {
+public class PastFragment extends Fragment {
 
     @Nullable
     @org.jetbrains.annotations.Nullable
     @Override
     public View onCreateView(@NonNull @NotNull LayoutInflater inflater, @Nullable @org.jetbrains.annotations.Nullable ViewGroup container, @Nullable @org.jetbrains.annotations.Nullable Bundle savedInstanceState) {
 //      This is for viewing fragment_profile.xml
-        View view = inflater.inflate(R.layout.fragment_profile,container,false);
+        View view = inflater.inflate(R.layout.fragment_past,container,false);
 
 //      Assigning Variables with id's defined in fragment_profile.xml
         Button btn_planner = view.findViewById(R.id.btn_profile);
 
-//      if btn_profile is clicked, it redirects the user to ProfileActivity
+//      if btn_profile is clicked, it redirects the user to PastActivity
         btn_planner.setOnClickListener(v -> {
-            Intent intent = new Intent(getActivity(),ProfileActivity.class);
+            Intent intent = new Intent(getActivity(), PastActivity.class);
             startActivity(intent);
         });
         return view;
