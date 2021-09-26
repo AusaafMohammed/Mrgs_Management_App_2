@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MrgsManagementApp" >
         <activity
+            android:name=".NoteDetailActivity"
+            android:exported="true" />
+        <activity
             android:name=".DetailActivity"
             android:exported="true" />
         <activity
@@ -19,7 +22,7 @@
             android:exported="true"
             android:label="@string/title_activity_library" />
         <activity
-            android:name=".PastActivity"
+            android:name=".NotesActivity"
             android:exported="true" />
         <activity android:name=".EventEditActivity" />
         <activity android:name=".WeekViewActivity" />

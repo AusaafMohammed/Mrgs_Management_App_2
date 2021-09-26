@@ -43,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
                 selectedFragment= new LibraryFragment();
                 break;
             case R.id.profile:
-                selectedFragment= new PastFragment();
+                selectedFragment= new NotesFragment();
                 break;
         }
         assert selectedFragment != null;

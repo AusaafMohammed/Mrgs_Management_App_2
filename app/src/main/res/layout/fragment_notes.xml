@@ -95,13 +95,13 @@
 <!--    </TextView>-->
 
     <Button
-        android:id="@+id/btn_profile"
+        android:id="@+id/btn_notes"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/TV_planner_howto"
         android:layout_centerInParent="true"
         android:layout_marginTop="15dp"
-        android:text="@string/profile"
+        android:text="Notes"
         android:fontFamily="@font/notoserif_bold"
         android:textAllCaps="true"
         android:textColor="@color/white"
